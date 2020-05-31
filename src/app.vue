@@ -1,6 +1,6 @@
 <template>
     <div id = "app">
-        <Device/>
+        <Device ref = "device"/>
     </div>
 </template>
 
@@ -9,6 +9,12 @@ import Device from './components/device.vue'
 export default {
     components: {
         Device
+    },
+
+    mounted: function() {
+        axios
+            .get(this.$route.query.url)
+            .then(response => (this.$ref.device.info = response));
     }
 }
 </script>

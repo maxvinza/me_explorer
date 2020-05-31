@@ -1,7 +1,7 @@
 <template>
     <div>
         <Port
-            v-for="port in ports"
+            v-for="port in info.ports"
             :key="port.id" :port="port"
         />
     </div>
@@ -18,7 +18,10 @@ export default {
     },
     data() {
         return {
-            ports: []
+            info: {
+                state: String,
+                ports: []
+            },
         }
     }
 }

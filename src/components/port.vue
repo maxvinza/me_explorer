@@ -1,5 +1,5 @@
 <template>
-    <div v-bind:class="port.state"> {{ port.id }} {{ port.client }}</div>
+    <div @class="port.up"> {{ port.id }} {{ port.description }}</div>
 </template>
 
 <script>
@@ -7,8 +7,9 @@ export default {
     props: {
         Ports: {
             id: Number,
-            state: String,
-            client: String,
+            up: String,
+            speed: String,
+            description: String,
         }
     }
 }
